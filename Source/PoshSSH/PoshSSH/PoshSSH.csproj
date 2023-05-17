@@ -18,11 +18,6 @@
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <Reference Include="Renci.SshNet, Version=2017.0.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Posh-SSH\Assembly\Renci.SshNet.dll</HintPath>
-    </Reference>
-
     <PackageReference Include="SshNet.Security.Cryptography" Version="1.3.0" />
     <Reference Include="System.Management" />
     <Reference Include="System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -34,11 +29,12 @@
   <ItemGroup Condition=" '$(TargetFramework)' == 'net7.0' ">
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Management.Automation" Version="7.3.4" />
-    <PackageReference Include="SshNet.Security.Cryptography">
-      <Version>1.3.0</Version>
-    </PackageReference>
+    <PackageReference Include="SshNet.Security.Cryptography" Version="1.3.0" />
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.1" />
-    <PackageReference Include="SSH.NET" Version="2020.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Modules\SSH.NET\src\Renci.SshNet\Renci.SshNet.csproj" />
   </ItemGroup>
 
 </Project>
