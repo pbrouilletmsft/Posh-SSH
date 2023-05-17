@@ -109,7 +109,11 @@ namespace SSH
                 }
                 catch (Exception ex)
                 {
+#if NET472
+                    erec = new ErrorRecord(ex, null, ErrorCategory.ResourceUnavailable, computer);
+#else
                     erec = new ErrorRecord(ex, null, ErrorCategory.ConnectionError, computer);
+#endif
                 }
                 finally
                 {
